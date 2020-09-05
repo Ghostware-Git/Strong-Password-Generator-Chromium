@@ -1,0 +1,156 @@
+html {
+    background: #222;
+    font-family: 'Ubuntu', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: white;
+    font-size: 1.2em;
+    text-align: center;
+    display: flex;
+    flex-flow: column;
+}
+
+input {
+    background: #111;
+    color: #bbb;
+    font-weight: bold;
+}
+
+#head {
+    font-size: 1.2em;
+    color: #91f;
+    width: 15em;
+    font-weight: bold;
+}
+
+#lblLen {
+    font-size: 2em;
+}
+#txtMain {
+    font-size: 2em;
+    border-radius: 0.2em;
+    outline: none;
+    border: none;
+    color: white;
+    transition: 0.2s background-color;
+    text-align: center;
+    margin: auto;
+}
+#txtMain:hover {
+    outline: none;
+}
+#txtMain:focus {
+    background: #333;
+    outline: none;
+    border:none;
+}
+#txtMain::-webkit-inner-spin-button, #txtMain::-webkit-outer-spin-button { 
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0; 
+}
+
+button {
+    background: #70f;
+    color: white;
+    margin: 1em auto 1em auto;
+    border-radius: 1em;
+    border: none;
+    display: block;
+    background: none;
+    cursor: pointer;
+    transition: background-color 0.5s;
+}
+
+button:hover {
+    background: #80f;
+}
+
+button:active {
+    background: #60d;
+}
+
+button:focus {
+    outline: none;
+}
+
+#btnGen {
+    font-weight: bold;
+    margin: 1em auto 1em auto;
+    border-radius: 0.5em;
+    background: #70f;
+    padding: 0.8em;
+}
+
+#btnGen:hover {
+    background: #80f;
+}
+
+#btnGen:active {
+    background: #60d;
+}
+
+#output {
+    display: inline-block;
+    width: 50vw;
+    height: 48px;
+    border:none;
+    border-radius: 8px 0 0 8px;
+    font-weight: bold;
+    padding-left: 8px;
+    position: relative;
+    left: 4px;
+    top: 1px;
+}
+
+#btnCopy {
+    margin: 0;
+    display: inline-block;
+    vertical-align: middle;
+    background: #70f;
+    height:48px;
+    padding: 4px;
+    border-radius: 0 8px 8px 0;
+}
+
+#btnCopy:hover {
+    background: #80f;
+}
+
+#btnCopy:active {
+    background: #60d;
+}
+
+#btnCopy img {
+    height: 24px;
+}
+
+#notif {
+    opacity: 0;
+    transition: opacity 0.5s;
+    font-weight: bold;
+}
+
+#copyRight {
+    position: fixed;
+    bottom: 8px;
+    right: 8px;
+}
+
+#rateBtn {
+    position: fixed;
+    bottom: 4px;
+    left: 4px;
+}
+
+.checkBtn {
+    padding: 8px;
+    background: #444;
+}
+
+.checkBtn:hover {
+    background: #555;
+}
+
+.checkBtn-selected {
+    background: #70f!important;
+}
