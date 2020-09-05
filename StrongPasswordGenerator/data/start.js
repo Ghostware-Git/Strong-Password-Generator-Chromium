@@ -28,17 +28,17 @@ function generatePass(max) {
 }
 
 function generate() {
-    const inp = document.getElementById("txtMain");
+    const inp = document.querySelector("#txtMain");
     if (inp.value > 50 || inp.value < 1) {
         inp.value = 15;
         showNotif("Invalid length value! Please enter from 1 to 50.");
         return;
     }
-    document.getElementById("output").value = generatePass(inp.value);
+    document.querySelector("#output").value = generatePass(inp.value);
 }
 
 function copy() {
-    const text = document.getElementById("output").value;
+    const text = document.querySelector("#output").value;
     navigator.clipboard.writeText(text).then(function() {
         showNotif("Copied!");
       }, function(err) {
@@ -47,8 +47,8 @@ function copy() {
 }
 
 document.addEventListener('DOMContentLoaded', function () {
-    document.getElementById("btnGen").onclick = generate;
-    document.getElementById("btnCopy").onclick = copy;
+    document.querySelector("#btnGen").onclick = generate;
+    document.querySelector("#btnCopy").onclick = copy;
     document.querySelectorAll(".checkBtn").forEach(function(item) {
         item.addEventListener('click', function() {checkBtnClicked(item)});
     });
