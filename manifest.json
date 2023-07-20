@@ -1,8 +1,8 @@
 {
   "author": "Ghostware",
   "name": "Strong Password Generator",
-  "version": "1.01",
-  "manifest_version": 2,
+  "version": "1.02",
+  "manifest_version": 3,
   "description": "Extension for Microsoft Edge that allows you to generate strong passwords of up to 50 characters length.",
   "icons": {
     "16": "icons/spg16.png",
@@ -10,8 +10,8 @@
     "48": "icons/spg48.png",
     "128": "icons/spg128.png"
   },
-  "permissions": ["clipboardWrite", "contextMenus"],
-  "browser_action": {
+  "permissions": [],
+  "action": {
     "default_popup": "data/start.html"
   }
 }

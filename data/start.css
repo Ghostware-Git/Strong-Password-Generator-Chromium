@@ -1,8 +1,12 @@
+:root {
+    --color-muted: ;
+    --text-sm: 0.5rem;
+}
+
 html {
     background: #222;
-    font-family: 'Ubuntu', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     color: white;
-    font-size: 1.2em;
     text-align: center;
     display: flex;
     flex-flow: column;
@@ -17,7 +21,8 @@ input {
 #head {
     font-size: 1.2em;
     color: #91f;
-    width: 15em;
+    width: '100%';
+    text-align: center;
     font-weight: bold;
 }
 
@@ -139,6 +144,11 @@ button:focus {
     position: fixed;
     bottom: 8px;
     right: 8px;
+}
+
+.text-muted {
+    color: var(--color-muted);
+    font-size: var(--text-sm);
 }
 
 #rateBtn {
