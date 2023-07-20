@@ -24,6 +24,7 @@ input {
 #lblLen {
     font-size: 2em;
 }
+
 #txtMain {
     font-size: 2em;
     border-radius: 0.2em;
@@ -34,19 +35,23 @@ input {
     text-align: center;
     margin: auto;
 }
+
 #txtMain:hover {
     outline: none;
 }
+
 #txtMain:focus {
     background: #333;
     outline: none;
-    border:none;
+    border: none;
 }
-#txtMain::-webkit-inner-spin-button, #txtMain::-webkit-outer-spin-button { 
+
+#txtMain::-webkit-inner-spin-button,
+#txtMain::-webkit-outer-spin-button {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
-    margin: 0; 
+    margin: 0;
 }
 
 button {
@@ -93,7 +98,7 @@ button:focus {
     display: inline-block;
     width: 50vw;
     height: 48px;
-    border:none;
+    border: none;
     border-radius: 8px 0 0 8px;
     font-weight: bold;
     padding-left: 8px;
@@ -107,7 +112,7 @@ button:focus {
     display: inline-block;
     vertical-align: middle;
     background: #70f;
-    height:48px;
+    height: 48px;
     padding: 4px;
     border-radius: 0 8px 8px 0;
 }
@@ -152,5 +157,5 @@ button:focus {
 }
 
 .checkBtn-selected {
-    background: #70f!important;
+    background: #70f !important;
 }

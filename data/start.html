@@ -1,0 +1,30 @@
+<html>
+
+<head>
+    <link type="text/css" rel="stylesheet" href="start.css">
+    <script src="start.js"></script>
+</head>
+
+<body>
+    <p id="head"><b>Password Generator</b></p>
+    <article>
+        <label id="lblLen">Length: </label>
+        <input id="txtMain" type="number" max="50" min="1" value="15" />
+        <table>
+            <tr>
+                <th><button class="checkBtn checkBtn-selected">Upper </button></th>
+                <th><button class="checkBtn checkBtn-selected">Lower </button></th>
+                <th><button class="checkBtn checkBtn-selected">Numbers</button></th>
+                <th><button class="checkBtn checkBtn-selected">Symbols</button></th>
+            </tr>
+        </table>
+        <button id="btnGen">Generate</button>
+        <input disabled id="output" />
+        <button id="btnCopy"><img src="img/copy.png" alt="copy"></button>
+        <br>
+        <label id="notif"></label>
+        <strong id="copyRight">- &#169 Ghostware 2020</strong>
+    </article>
+</body>
+
+</html>
