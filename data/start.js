@@ -1,4 +1,59 @@
-var lastCopy;
+/** Storage IDs of buttons */
+const btnIds = ["check_upper", "check_lower", "check_numbers", "check_symbols"];
+/** Storage ID of length */
+const lenId = "text_length";
+
+/** Manages data storage */
+class DataStorage {
+  /** Saves given index button state
+   * @param {number} index The index of button to save state of
+   * @param {boolean} state The state to save
+   * @returns {boolean} Boolean indicating if the storage was successful
+   */
+  saveButtonState(index, state) {
+    if (index < 0 || index > 3) return false;
+    localStorage.setItem(btnIds[index], state ? 1 : 0);
+    return true;
+  }
+
+  /** Gets stored state of button at given index
+   * @param {number} index The index of button to get state of
+   * @returns {boolean} Boolean indicating checked state
+   */
+  getButtonState(index) {
+    if (index < 0 || index > 3) return false;
+    return localStorage.getItem(btnIds[index]) !== "0";
+  }
+
+  /** Saves given number as length
+   * @param {string} length The length to store
+   * @returns {boolean} Boolean indicating if the storage was successful
+   */
+  saveLength(length) {
+    const l = parseInt(length);
+    if (l.toString() !== length || l < 1 || l > 50) return false;
+    localStorage.setItem(lenId, l);
+    return true;
+  }
+
+  /** Gets saved length data
+   * @returns {number} The stored length
+   */
+  getLength() {
+    const length = localStorage.getItem(lenId);
+    if (length) {
+      const i = parseInt(length);
+      if (i.toString() === length) return i;
+    }
+    return 15;
+  }
+}
+
+/** Storage instance */
+const storage = new DataStorage();
+
+/** Last copied text */
+let lastCopy;
 
 function generatePass(max) {
   let filters = checkSelectedFilters();
