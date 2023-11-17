@@ -55,6 +55,32 @@ const storage = new DataStorage();
 /** Last copied text */
 let lastCopy;
 
+/** Initializes app data and listeners */
+function init() {
+  // Initialize listeners
+  document.addEventListener("DOMContentLoaded", function () {
+    document.querySelector("#btnGen").onclick = generate;
+    document.querySelector("#btnCopy").onclick = copy;
+    document.querySelector("#txtMain").addEventListener("change", function (e) {
+      storage.saveLength(e.target.value);
+    });
+    document.querySelectorAll(".checkBtn").forEach(function (item, i) {
+      item.addEventListener("click", function () {
+        checkBtnClicked(item, i);
+      });
+      if (storage.getButtonState(i)) checkBtnClicked(item, i);
+    });
+
+    const storedLength = storage.getLength();
+    if (storedLength) {
+      setLength(storedLength);
+    }
+
+    // Automatically generate random password on load
+    generate();
+  });
+}
+
 /** Generates a password for given max length
  * @param {number} max The maximum length for password
  * @returns {string} The generated password
@@ -111,16 +137,7 @@ function copy() {
   );
 }
 
-document.addEventListener("DOMContentLoaded", function () {
-  document.querySelector("#btnGen").onclick = generate;
-  document.querySelector("#btnCopy").onclick = copy;
-  document.querySelectorAll(".checkBtn").forEach(function (item) {
-    item.addEventListener("click", function () {
-      checkBtnClicked(item);
-    });
-  });
-  generate();
-});
+init();
 
 /** Checks selected filters and returns indexes of
  * selected filters.
