@@ -1,7 +1,7 @@
 {
   "author": "Ghostware",
   "name": "Strong Password Generator",
-  "version": "1.3.1",
+  "version": "1.4",
   "manifest_version": 3,
   "description": "Extension for Chromium that allows you to generate strong passwords of up to 50 characters length.",
   "icons": {
