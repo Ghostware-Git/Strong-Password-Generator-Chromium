@@ -55,6 +55,10 @@ const storage = new DataStorage();
 /** Last copied text */
 let lastCopy;
 
+/** Generates a password for given max length
+ * @param {number} max The maximum length for password
+ * @returns {string} The generated password
+ */
 function generatePass(max) {
   let filters = checkSelectedFilters();
   if (filters.length == 0) {
@@ -81,6 +85,9 @@ function generatePass(max) {
   return out;
 }
 
+/** Initiates password generation process. Automatically
+ * extracts input and sets output text.
+ */
 function generate() {
   const inp = document.querySelector("#txtMain");
   if (inp.value > 50 || inp.value < 1) {
@@ -91,6 +98,7 @@ function generate() {
   document.querySelector("#output").value = generatePass(inp.value);
 }
 
+/** Copies generated text to clipboard */
 function copy() {
   const text = document.querySelector("#output").value;
   navigator.clipboard.writeText(text).then(
@@ -114,6 +122,10 @@ document.addEventListener("DOMContentLoaded", function () {
   generate();
 });
 
+/** Checks selected filters and returns indexes of
+ * selected filters.
+ * @returns {number[]} Selected filter indexes
+ */
 function checkSelectedFilters() {
   var checks = document.querySelectorAll(".checkBtn");
   list = [];
@@ -127,12 +139,23 @@ function checkSelectedFilters() {
 
 function checkBtnClicked(btn) {
   if (btn.classList.contains("checkBtn-selected")) {
+/** Selects/deselects given button
+ * @param {HTMLElement} btn The button to check
+ * @param {number} i Index of the button
+ */
     btn.classList.remove("checkBtn-selected");
   } else {
     btn.classList.add("checkBtn-selected");
   }
+/** Sets length text to given value
+ * @param {number} length Length to set the value to
+ *
+ */
 }
 
+/** Shows given text in notification view
+ * @param {string} text The text to show
+ */
 function showNotif(text) {
   if (lastCopy != null) clearTimeout(lastCopy);
   let el = document.querySelector("#notif");
