@@ -123,6 +123,7 @@ button:focus {
     vertical-align: middle;
     background: #70f;
     height: 48px;
+    width: 48px;
     padding: 4px;
     border-radius: 0 8px 8px 0;
 }
