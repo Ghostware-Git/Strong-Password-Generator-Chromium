@@ -154,20 +154,27 @@ function checkSelectedFilters() {
   return list;
 }
 
-function checkBtnClicked(btn) {
-  if (btn.classList.contains("checkBtn-selected")) {
 /** Selects/deselects given button
  * @param {HTMLElement} btn The button to check
  * @param {number} i Index of the button
  */
+function checkBtnClicked(btn, i) {
+  const isChecked = btn.classList.contains("checkBtn-selected");
+  if (isChecked) {
     btn.classList.remove("checkBtn-selected");
   } else {
     btn.classList.add("checkBtn-selected");
   }
+  storage.saveButtonState(i, !isChecked);
+}
+
 /** Sets length text to given value
  * @param {number} length Length to set the value to
  *
  */
+function setLength(length) {
+  const inp = document.querySelector("#txtMain");
+  inp.value = length;
 }
 
 /** Shows given text in notification view
